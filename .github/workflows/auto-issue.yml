@@ -1,16 +1,13 @@
 name: Creating auto-issue
+on: push
 
-on:
-  push:
 jobs:
-  runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: create an issue
-        uses: dacbd/create-issue-action@main
-        with:
-          token: ${{ github.token }}
-          title: Simple test issue
-          body: my new issue
-          assignees: git-madhu,srkambham,Sunil0916
-      
+  steps:
+    - uses: actions/checkout@v3
+    - name: create an issue
+      uses: dacbd/create-issue-action@main
+      with:
+        token: ${{ github.token }}
+        title: Simple test issue
+        body: my new issue
+        assignees: git-madhu,srkambham
